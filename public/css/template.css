@@ -1,0 +1,48 @@
+/*Header para todas las páginas*/
+header{
+	background: #21219e;
+}
+
+h1 {
+	color: #FFFFFF;
+	text-align: center;
+	padding-right: 10px;
+}
+
+h2 {
+	color: #FFFFFF;
+	text-align: center;
+	padding-right: 10px;
+	font-size: 23px
+}
+
+h3{
+	color: #2E2E2E;
+	text-align: center;
+}
+
+/*Botón para ingresar a las páginas*/
+#boton-guardar{
+	margin-left: 31px;
+	border: 10px;
+}
+
+/*Footer para todas las páginas*/
+footer{
+	color: #21219e;
+	font-size: 24px;
+	text-align: center;
+	padding-right: 100px;
+}
+
+/*Posición de la imagen en el Registro.html*/
+.imagen{
+
+	float:left;width:135px;height:82px;margin:5px;margin-top:5px;
+}
+
+/*Posición de la imagen para las páginas de los correos*/
+.imagen2{
+
+	float:right;width:135px;height:82px;margin:5px;margin-top:5px;
+}
