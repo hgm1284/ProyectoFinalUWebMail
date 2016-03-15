@@ -13,7 +13,7 @@
     <div class="container">
       <section class="main row">
         <div  class = "fila"> 
-          <div  class = "col-xs-12 col-sm-8 col-md-4 col-lg-3 col-md-offset-4"> 
+          <div  class = "col-xs-6 col-sm-8 col-md-4 col-lg-3 col-md-offset-4"> 
             <hr>
           </div>
         </div>
