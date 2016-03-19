@@ -75,8 +75,13 @@
 </div>
 
 <div>
-  <button type="submit" class="btn btn-default" id="save-client">Register</button>
-  <button type="submit" class="btn btn-default" id="save-client">Cancel</button>
+  Password Confirmation
+  <p><input type="password" name="password_confirmation"></p>
+</div>
+
+<div>
+  <button  type="submit" class="btn btn-default" >Register</button>
+  <a href="login"> <button type="button" class="btn btn-default" >Cancel</button></a>
 </div>
     
 </article>

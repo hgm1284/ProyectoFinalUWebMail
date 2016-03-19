@@ -34,16 +34,7 @@
   <div class="container">
     <section class="main row">
       <article class="col-xs-12 col-sm-8 col-md-4 col-lg-3 col-md-offset-4">
-        @if (count($errors) > 0)
-          <div class="alert alert-danger">
-            <ul>
-              @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-              @endforeach
-            </ul>
-          </div>
-          @endif
-
+      
         <form method= "POST" action="/auth/login">
             {!! csrf_field() !!}
           <div class="form-group">
@@ -63,7 +54,7 @@
               </div>
               <hr>
               <button type="submit" class="btn btn-default" id="boton-guardar">Ingresar</button>
-              <a href="Registro.html"><button type="button" class="btn btn-default" id="boton-guardar">Registrarse</button><br></a>
+              <a href="register"><button type="button" class="btn btn-default" id="boton-guardar">Registrarse</button><br></a>
               <hr/>
             </form>
           </section>
