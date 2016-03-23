@@ -15,13 +15,9 @@ class Home extends Controller
 
     	$mails = DB::select('select * from mails');
 
-    	
-
         return view('home', ['mails' => $mails]);
 
 
     }
-
-
 
 }
