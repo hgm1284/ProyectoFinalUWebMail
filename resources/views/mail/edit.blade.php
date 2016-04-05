@@ -60,18 +60,19 @@
 {!!  Form::model($email ,['route'=>['mail.update' ,$email],'method'=>'put'])!!}
 
 <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
+    <label for="exampleInputEmail1">destino</label>
     {!!Form::text('destino',null,['class'=>'form-control','placeholder'=>'example@gmail.com,example2@hotmail.com'])!!}
 </div>
 <div class="form-group">
-    <label for="example">Subject</label>
+    <label for="example">asunto</label>
     {!!Form::text('asunto',null,['class'=>'form-control','placeholder'=>'Subject'])!!}
 </div>
 <div class="form-group">
-    <label for="example">Content</label>
+    <label for="example">mensaje</label>
     {!!Form::textarea ('mensaje',null,['class'=>'form-control','placeholder'=>'Write the message here'])!!}
 </div>
-{!!Form::submit('Save',['class'=>'btn btn-primary'])!!}
+{!!Form::open(['route'=>['mail.update' ,$email->id],'method'=>'update'])!!}
+<button type="submit" class="btn btn-danger">Editar</button>
 {!!Form::close()!!}
 
 
