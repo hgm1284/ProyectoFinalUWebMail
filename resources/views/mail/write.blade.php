@@ -57,11 +57,11 @@
   </form>
  <div class ="container col-xs-8">
 
-{!!  Form::model($email ,['route'=>['mail.update' ,$email],'method'=>'put'])!!}
+<form action='/mail' method="POST">
 
 <div class="form-group">
     <label for="exampleInputEmail1">destino</label>
-    {!!Form::text('destino',null,['class'=>'form-control','placeholder'=>'example@gmail.com,example2@hotmail.com'])!!}
+    {!!Form::text('destino',null,['class'=>'form-control','placeholder'=>'Address'])!!}
 </div>
 <div class="form-group">
     <label for="example">asunto</label>
@@ -71,22 +71,26 @@
     <label for="example">mensaje</label>
     {!!Form::textarea ('mensaje',null,['class'=>'form-control','placeholder'=>'Write the message here'])!!}
 </div>
-{!!Form::open(['route'=>['mail.update' ,$email->id],'method'=>'update'])!!}
-<button type="submit" class="btn btn-danger">Editar</button>
-{!!Form::close()!!}
+
+<button type="submit" class="btn btn-danger">Guardar</button>
+</form>
 
 
   </div>
 </div>
 
+
+
+
   <footer>
   <div class="container">
     <section class="main row">
       <article class="col-xs-12 col-sm-8 col-md-4 col-lg-12">
-        Mensajes de Salida
+        Nuevo Mensaje
       </article>
     </section>
   </div>
+  
 </footer>
 
 <script src="/js/jquery.js"></script>

@@ -39,4 +39,25 @@ public function update(Request $request, $id)
 
 }
 
+  public function create()
+    {
+        return view('mail/write');
+    }
+
+    public function show($id)
+    {
+        
+    }
+
+  public function store(Request $request)
+    {
+            $mail = new Mail;
+            $mail->destino=$request->destino;
+            $mail->asunto=$request->asunto;
+            $mail->mensaje=$request->mensaje;
+            $mail->save();
+            return Redirect::to('home')->with('status', '¡Mensaje Enviado!');
+    }
+
+   
 }

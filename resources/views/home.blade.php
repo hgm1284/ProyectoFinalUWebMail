@@ -30,7 +30,7 @@
         </section>
       </div>
       <div class="page-header">
-       <h1>TICOMAIL El correo de Costa Rica</h1>
+       <h1>TICOMAIL - El correo de Costa Rica</h1>
      </div>
    </article>
  </header>
@@ -44,11 +44,10 @@
 @endif
 
  <form name ="crear">
- 
   <div class = "container col-sm-2" align="left">
     <div class="btn btn-group-vertical">
       <div class="btn-group ">
-        <input  type="button" class="btn btn-danger"  value="Redactar" data-toggle="modal" data-target="#myModal"/><br><br>
+        <a href="{{ URL::to('mail/create') }}" type="button" class="btn btn-danger">Redactar</a><br><br>
         <div class="row">
           </div>
         </div>
@@ -57,7 +56,7 @@
         <div class="btn-group-vertical">
           <button type="button" class="btn btn-default" id="btn2"><b>Salida</b></button>
           <button type="button" class="btn btn-default" id="btn1">Enviados</button>
-          <button type="button" class="btn btn-default" id="btn">Salir</button>
+          <a href="{{ URL::to('logout') }}" type="button" class="btn btn-default">Salir</a>
         </div>
       </div>
     </div>
@@ -70,7 +69,7 @@
           <tr>
             <th>Destinatario</th>
             <th>Asunto</th>
-            <th>Fecha</th>
+            <th>Fecha/Hora</th>
           </tr>
         </thead>
         <tbody>
