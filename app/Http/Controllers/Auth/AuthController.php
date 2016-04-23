@@ -62,12 +62,14 @@ protected function validator(array $data)
  * @param  array  $data
  * @return User
  */
-protected function create(array $data)
+protected function create(array $data ,$string)
 {
+
     return User::create([
         'name' => $data['name'],
         'lastname' => $data['lastname'],
         'email' => $data['email'],
+        'token'=>$string,
         'password' => bcrypt($data['password']),
     ]);
 }

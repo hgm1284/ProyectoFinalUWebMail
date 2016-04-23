@@ -43,7 +43,7 @@ Route::get('logout', [
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::resource('mail', 'MailController');
-
+Route::get('mail/verificar/{remember_token}','MailController@verificar');
 
 Route::get('sendemail', function () {
 

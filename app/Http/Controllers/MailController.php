@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Mail;
 use Session;
 use Illuminate\Routing\Controller;
+use DB;
 
 class MailController extends Controller
 {
@@ -68,4 +69,21 @@ public function store(Request $request)
     return Redirect::to('home')->with('status', '¡Mensaje Guardado!');
 }
 
+public function verificar($token){
+
+  $user = DB::table('users')
+     ->where('token', '=', $token)
+     ->get();
+
+     if ((empty($user))) {
+  return Redirect::to('/auth/login')->with('status', '¡Lo siento mucho, no ha verificado su cuenta!');
+     }
+  else
+  {
+    DB::table('users')
+            ->where('token', $token)
+            ->update(['status' => 1]);
+              return Redirect::to('/auth/login')->with('status', '¡Bienvenido!');
+}
+}
 }

@@ -7,8 +7,9 @@
 <h2>Welcome</h2>
 
 <div>
-    Welcome to {!! $name !!} to my website!
-      Welcome to {!! $email !!} to my website!
+   {!! $name !!} Welcome to TicoMail!
+    Your username is {!! $email !!} !
+    <a href="http://localhost:8000/mail/verificar/{!!$token!!}">Confirm your new account please!</a>
 </div>
 
 </body>
