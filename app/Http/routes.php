@@ -48,14 +48,14 @@ Route::resource('mail', 'MailController');
 Route::get('sendemail', function () {
 
     $data = array(
-        'name' => "Harvey",
+        'name' => "Learning Laravel",
     );
 
     Mail::send('emails.welcome', $data, function ($message) {
 
         $message->from('hgm1284@gmail.com', 'Welcome');
 
-        $message->to('melvin.r.a.cr@gmail.com')->subject('esto es un test');
+        $message->to('melvin.r.a.cr@gmail.com')->subject('Learning Laravel test email');
 
     });
 
