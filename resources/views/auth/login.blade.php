@@ -12,8 +12,8 @@
 <body>
   <div class="container">
     <section class="main row">
-      <div  class = "fila"> 
-        <div  class = "col-xs-6 col-sm-8 col-md-4 col-lg-3 col-md-offset-4"> 
+      <div  class = "fila">
+        <div  class = "col-xs-6 col-sm-8 col-md-4 col-lg-3 col-md-offset-4">
           <hr>
         </div>
       </div>
@@ -22,8 +22,8 @@
   <div class="container">
     <section class="main row">
       <article class="col-xs-12 col-sm-8 col-md-4 col-lg-3 col-md-offset-4">
-        <div  class = "página-header"> 
-          <h1><b>TICOMAIL</b></h1><h2>El correo de los ticos</h2> 
+        <div  class = "página-header">
+          <h1><b>TICOMAIL</b></h1><h2>El correo de los ticos</h2>
         </div>
       </section>
     </div>
@@ -34,8 +34,8 @@
 <div class="container">
   <section class="main row">
     <article class="col-xs-12 col-sm-8 col-md-4 col-lg-3 col-md-offset-4">
-    
-      <form method= "POST" action="/auth/login">
+
+      <form method= "POST" action="/login">
           {!! csrf_field() !!}
         <div class="form-group">
           <form class="form-inline">
@@ -77,4 +77,4 @@
 <script src="/js/application.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 </body>
-</html> 
+</html>

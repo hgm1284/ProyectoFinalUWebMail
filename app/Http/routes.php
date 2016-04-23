@@ -31,9 +31,13 @@ Route::get('home', [
 'as' => 'home'
 ]);
 
+Route::post('login', [
+  'uses'=>'UserController@login',
+  'as' => 'login'
+  ]);
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('logout', [
 'uses'=>'Auth\AuthController@logout',
 'as'=>'logout'
