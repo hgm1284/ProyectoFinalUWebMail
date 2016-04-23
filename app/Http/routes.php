@@ -26,15 +26,17 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('/', function () {
 return view('auth/login');
 });
+
 Route::get('home', [
 'uses'=>'Home@index',
 'as' => 'home'
 ]);
 
+// Route verification...
 Route::post('login', [
-  'uses'=>'UserController@login',
-  'as' => 'login'
-  ]);
+'uses'=>'UserController@login',
+'as' => 'login'
+]);
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -49,21 +51,22 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::resource('mail', 'MailController');
 Route::get('mail/verificar/{remember_token}','MailController@verificar');
 
+//Se creo ésta ruta para probar el envío de la verificación por correo.
 Route::get('sendemail', function () {
 
-    $data = array(
-        'name' => "Learning Laravel",
-    );
+$data = array(
+    'name' => "Learning Laravel",
+);
 
-    Mail::send('emails.welcome', $data, function ($message) {
+Mail::send('emails.welcome', $data, function ($message) {
 
-        $message->from('hgm1284@gmail.com', 'Welcome');
+    $message->from('hgm1284@gmail.com', 'Welcome');
 
-        $message->to('melvin.r.a.cr@gmail.com')->subject('Learning Laravel test email');
+    $message->to('melvin.r.a.cr@gmail.com')->subject('Learning Laravel test email');
 
-    });
+});
 
-    return "Your email has been sent successfully";
+return "Your email has been sent successfully";
 
 });
 });

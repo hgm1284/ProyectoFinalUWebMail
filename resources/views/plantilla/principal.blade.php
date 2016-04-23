@@ -13,46 +13,46 @@
 
 <header>
 <body>
-  <div class="container">
-    <section class="main row">
-      <article class="col-xs-12 col-sm-8 col-md-6 col-lg-12">
-        <article class="col-xs-12 col-sm-8 col-md-6 col-lg-3">
-          <form>
-            <div class="form-group">
-              <label for="usr"></label>
-              <input type="text" class="form-control input-sm" placeholder="Buscar Correo" id="usr">
-            </div>
-          </form>
-          <button type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-search"></span>Buscar
-          </button>
-        </article>
-      </section>
-    </div>
-    <div class="page-header">
-     <h1>TICOMAIL El correo de Costa Rica</h1>
-   </div>
- </article>
+<div class="container">
+  <section class="main row">
+    <article class="col-xs-12 col-sm-8 col-md-6 col-lg-12">
+      <article class="col-xs-12 col-sm-8 col-md-6 col-lg-3">
+        <form>
+          <div class="form-group">
+            <label for="usr"></label>
+            <input type="text" class="form-control input-sm" placeholder="Buscar Correo" id="usr">
+          </div>
+        </form>
+        <button type="button" class="btn btn-default">
+          <span class="glyphicon glyphicon-search"></span>Buscar
+        </button>
+      </article>
+    </section>
+  </div>
+  <div class="page-header">
+   <h1>TICOMAIL El correo de Costa Rica</h1>
+ </div>
+</article>
 </header>
 <br>
 
 <form name ="crear">
 <div class = "container col-sm-2" align="left">
-  <div class="btn btn-group-vertical">
-    <div class="btn-group ">
-      <input  type="button" class="btn btn-danger"  value="Redactar" data-toggle="modal" data-target="#myModal"/><br><br>
-      <div class="row">
-        </div>
-      </div>
-      </div>
-
-      <div class="btn-group-vertical">
-        <button type="button" class="btn btn-default" id="btn2"><b>Salida</b></button>
-        <button type="button" class="btn btn-default" id="btn1">Enviados</button>
-        <button type="button" class="btn btn-default" id="btn">Salir</button>
+<div class="btn btn-group-vertical">
+  <div class="btn-group ">
+    <input  type="button" class="btn btn-danger"  value="Redactar" data-toggle="modal" data-target="#myModal"/><br><br>
+    <div class="row">
       </div>
     </div>
+    </div>
+
+    <div class="btn-group-vertical">
+      <button type="button" class="btn btn-default" id="btn2"><b>Salida</b></button>
+      <button type="button" class="btn btn-default" id="btn1">Enviados</button>
+      <button type="button" class="btn btn-default" id="btn">Salir</button>
+    </div>
   </div>
+</div>
 </form>
 
 @yield('content')
@@ -63,11 +63,11 @@
 
 <footer>
 <div class="container">
-  <section class="main row">
-    <article class="col-xs-12 col-sm-8 col-md-4 col-lg-12">
-      Mensajes de Salida
-    </article>
-  </section>
+<section class="main row">
+  <article class="col-xs-12 col-sm-8 col-md-4 col-lg-12">
+    Mensajes de Salida
+  </article>
+</section>
 </div>
 </footer>
 
@@ -75,6 +75,3 @@
 <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
-

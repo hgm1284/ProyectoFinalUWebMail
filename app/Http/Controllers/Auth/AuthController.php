@@ -24,53 +24,53 @@ class AuthController extends Controller
 use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
 /**
- * Where to redirect users after login / registration.
- *
- * @var string
- */
+* Where to redirect users after login / registration.
+*
+* @var string
+*/
 protected $redirectTo = 'home';
 
 /**
- * Create a new authentication controller instance.
- *
- * @return void
- */
+* Create a new authentication controller instance.
+*
+* @return void
+*/
 public function __construct()
 {
-    $this->middleware('guest', ['except' => 'logout']);
+$this->middleware('guest', ['except' => 'logout']);
 }
 
 /**
- * Get a validator for an incoming registration request.
- *
- * @param  array  $data
- * @return \Illuminate\Contracts\Validation\Validator
- */
+* Get a validator for an incoming registration request.
+*
+* @param  array  $data
+* @return \Illuminate\Contracts\Validation\Validator
+*/
 protected function validator(array $data)
 {
-    return Validator::make($data, [
-        'name' => 'required|max:255',
-        'lastname' => 'required|max:255',
-        'email' => 'required|email|max:255|unique:users',
-        'password' => 'required|confirmed|min:6',
-    ]);
+return Validator::make($data, [
+    'name' => 'required|max:255',
+    'lastname' => 'required|max:255',
+    'email' => 'required|email|max:255|unique:users',
+    'password' => 'required|confirmed|min:6',
+]);
 }
 
 /**
- * Create a new user instance after a valid registration.
- *
- * @param  array  $data
- * @return User
- */
+* Create a new user instance after a valid registration.
+*
+* @param  array  $data
+* @return User
+*/
 protected function create(array $data ,$string)
 {
 
-    return User::create([
-        'name' => $data['name'],
-        'lastname' => $data['lastname'],
-        'email' => $data['email'],
-        'token'=>$string,
-        'password' => bcrypt($data['password']),
-    ]);
+return User::create([
+    'name' => $data['name'],
+    'lastname' => $data['lastname'],
+    'email' => $data['email'],
+    'token'=>$string,
+    'password' => bcrypt($data['password']),
+]);
 }
 }

@@ -61,29 +61,34 @@ Función para crear un nuevo correo y guardarlo en la base de datos.
 */
 public function store(Request $request)
 {
-    $mail = new Mail;
-    $mail->destino=$request->destino;
-    $mail->asunto=$request->asunto;
-    $mail->mensaje=$request->mensaje;
-    $mail->save();
-    return Redirect::to('home')->with('status', '¡Mensaje Guardado!');
+$mail = new Mail;
+$mail->destino=$request->destino;
+$mail->asunto=$request->asunto;
+$mail->mensaje=$request->mensaje;
+$mail->save();
+return Redirect::to('home')->with('status', '¡Mensaje Guardado!');
 }
 
+/*
+Función para verificar el correo, si hay datos y si el status es 1.
+*/
 public function verificar($token){
 
-  $user = DB::table('users')
-     ->where('token', '=', $token)
-     ->get();
+$user = DB::table('users')
+->where('token', '=', $token)
+->get();
 
-     if ((empty($user))) {
-  return Redirect::to('/auth/login')->with('status', '¡Lo siento mucho, no ha verificado su cuenta!');
-     }
-  else
-  {
-    DB::table('users')
-            ->where('token', $token)
-            ->update(['status' => 1]);
-              return Redirect::to('/auth/login')->with('status', '¡Bienvenido!');
+if ((empty($user))) {
+return Redirect::to('/auth/login')->with('status', '¡Lo siento mucho, no ha verificado su cuenta!');
 }
+else
+{
+DB::table('users')
+->where('token', $token)
+->update(['status' => 1]);
+  return Redirect::to('home')->with('status', '¡Bienvenido a TicoMail!');
 }
+
+}
+
 }
