@@ -32,6 +32,11 @@ Route::get('home', [
 'as' => 'home'
 ]);
 
+Route::get('mail/sent', [
+'uses'=>'SentController@sent',
+'as' => 'mail/sent'
+]);
+
 // Route verification...
 Route::post('login', [
 'uses'=>'UserController@login',

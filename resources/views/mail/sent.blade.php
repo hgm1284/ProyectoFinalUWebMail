@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Mensajes de Salida</title>
+<title>Mensajes Enviados</title>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
-<link rel="stylesheet" href="css\bootstrap.min.css">
-<link rel="stylesheet" href="css\template.css">
+<link rel="stylesheet" href="/css\bootstrap.min.css">
+<link rel="stylesheet" href="/css\template.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/application.js" type="text/javascript"></script>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -53,8 +53,8 @@
     </div>
 
     <div class="btn-group-vertical">
-      <a href="{{ URL::to('home') }}" type="button" id="btn2"class="btn btn-default"><b>Salida</b></a>
-      <a href="{{ URL::to('mail/sent') }}" type="button" id="btn2"class="btn btn-default">Enviados</a>
+      <a href="{{ URL::to('home') }}" type="button" id="btn2"class="btn btn-default">Salida</a>
+      <a href="{{ URL::to('mail/sent') }}" type="button" id="btn2"class="btn btn-default"><b>Enviados</b></a>
       <button type="button" class="btn btn-default" id="btn1">Borrador</button>
       <a href="{{ URL::to('logout') }}" type="button" class="btn btn-default">Salir</a>
     </div>
@@ -98,7 +98,7 @@
 <div class="container">
 <section class="main row">
   <article class="col-xs-12 col-sm-8 col-md-4 col-lg-12">
-    Mensajes de Salida
+    Mensajes Enviados
   </article>
 </section>
 </div>

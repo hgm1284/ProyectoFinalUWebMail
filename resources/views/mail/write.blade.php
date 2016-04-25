@@ -48,7 +48,7 @@
 
     <div class="btn-group-vertical">
       <a href="{{ URL::to('home') }}" type="button" id="btn2"class="btn btn-default">Salida</a>
-      <button type="button" class="btn btn-default" id="btn1">Enviados</button>
+      <a href="{{ URL::to('mail/sent') }}" type="button" id="btn2"class="btn btn-default">Enviados</a>
       <button type="button" class="btn btn-default" id="btn1">Borrador</button>
       <a href="{{ URL::to('logout') }}" type="button" class="btn btn-default">Salir</a>
     </div>
@@ -81,7 +81,7 @@
 <label for="example">mensaje</label>
 {!!Form::textarea ('mensaje',null,['class'=>'form-control','placeholder'=>'Write the message here'])!!}
 </div>
-<button type="submit" class="btn btn-danger">Guardar</button>
+<button type="submit" class="btn btn-danger">Enviar</button>
 </form>
 </div>
 </div>
