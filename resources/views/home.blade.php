@@ -55,7 +55,7 @@
     <div class="btn-group-vertical">
       <a href="{{ URL::to('home') }}" type="button" id="btn2"class="btn btn-default"><b>Salida</b></a>
       <a href="{{ URL::to('mail/sent') }}" type="button" id="btn2"class="btn btn-default">Enviados</a>
-      <a href="{{ URL::to('mail/draft') }}" type="button" id="btn2"class="btn btn-default"><b>Borrador</b></a>
+      <a href="{{ URL::to('mail/draft') }}" type="button" id="btn2"class="btn btn-default">Borrador</a>
       <a href="{{ URL::to('logout') }}" type="button" class="btn btn-default">Salir</a>
     </div>
   </div>

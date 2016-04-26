@@ -32,12 +32,11 @@ Route::get('home', [
 'as' => 'home'
 ]);
 
+// Route sentmail...
 Route::get('mail/sent', [
 'uses'=>'SentController@sent',
 'as' => 'mail/sent'
 ]);
-
-
 
 // Route verification...
 Route::post('login', [
@@ -63,14 +62,14 @@ Route::get('mail/verificar/{remember_token}','MailController@verificar');
 Route::get('sendemail', function () {
 
 $data = array(
-    'name' => "Learning Laravel",
+'name' => "Learning Laravel",
 );
 
 Mail::send('emails.welcome', $data, function ($message) {
 
-    $message->from('hgm1284@gmail.com', 'Welcome');
+$message->from('hgm1284@gmail.com', 'Welcome');
 
-    $message->to('melvin.r.a.cr@gmail.com')->subject('Learning Laravel test email');
+$message->to('melvin.r.a.cr@gmail.com')->subject('Learning Laravel test email');
 
 });
 

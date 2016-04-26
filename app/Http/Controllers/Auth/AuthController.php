@@ -49,10 +49,10 @@ $this->middleware('guest', ['except' => 'logout']);
 protected function validator(array $data)
 {
 return Validator::make($data, [
-    'name' => 'required|max:255',
-    'lastname' => 'required|max:255',
-    'email' => 'required|email|max:255|unique:users',
-    'password' => 'required|confirmed|min:6',
+'name' => 'required|max:255',
+'lastname' => 'required|max:255',
+'email' => 'required|email|max:255|unique:users',
+'password' => 'required|confirmed|min:6',
 ]);
 }
 
@@ -66,11 +66,11 @@ protected function create(array $data ,$string)
 {
 
 return User::create([
-    'name' => $data['name'],
-    'lastname' => $data['lastname'],
-    'email' => $data['email'],
-    'token'=>$string,
-    'password' => bcrypt($data['password']),
+'name' => $data['name'],
+'lastname' => $data['lastname'],
+'email' => $data['email'],
+'token'=>$string,
+'password' => bcrypt($data['password']),
 ]);
 }
 }

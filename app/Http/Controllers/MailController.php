@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Redirect;
 use App\Http\Requests;
-use App\Mail;
+use App\email;
 use Session;
 use Illuminate\Routing\Controller;
 use DB;
@@ -18,7 +18,7 @@ Función que permite mostrar los datos del correo en la vista edit.
 */
 public function edit($id)
 {
-$email=Mail::findOrFail($id);
+$email=email::findOrFail($id);
 return view('mail/edit',compact('email'));
 }
 
@@ -27,7 +27,7 @@ Función que permite eliminar correos de la base de datos.
 */
 public function destroy($id)
 {
-$email=Mail::find($id);
+$email=email::find($id);
 $email->delete();
 return Redirect::to('home')->with('status', '¡Mensaje eliminado con éxito!');
 }
@@ -38,7 +38,7 @@ en la base de datos.
 */
 public function update(Request $request, $id)
 {
-$email=Mail::find($id);
+$email=email::find($id);
 $email->destino=$request->destino;
 $email->asunto=$request->asunto;
 $email->mensaje=$request->mensaje;
@@ -51,12 +51,18 @@ public function create()
 return view('mail/write');
 }
 
+/*
+Función para solo ver el contenido del correo.
+*/
 public function show($id)
 {
-$email=Mail::findOrFail($id);
+$email=email::findOrFail($id);
 return view('mail/see',compact('email'));
 }
 
+/*
+Función para mostrar los correos en estado de draft(estado=2)
+*/
 public function draft()
 {
 $mails = DB::select('select * from mails where estado = 2');
@@ -64,11 +70,11 @@ return view('mail/draft', ['mails' => $mails]);
 }
 
 /*
-Función para crear un nuevo correo y guardarlo en la base de datos.
+Función para crear un nuevo correo, ennviarlo y guardarlo en la base de datos.
 */
 public function store(Request $request)
 {
-$mail = new Mail;
+$mail = new email;
 $mail->destino=$request->destino;
 $mail->asunto=$request->asunto;
 $mail->mensaje=$request->mensaje;
@@ -93,7 +99,7 @@ else
 DB::table('users')
 ->where('token', $token)
 ->update(['status' => 1]);
-  return Redirect::to('home')->with('status', '¡Bienvenido a TicoMail!');
+return Redirect::to('home')->with('status', '¡Bienvenido a TicoMail!');
 }
 
 }
