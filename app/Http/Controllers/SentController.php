@@ -18,7 +18,7 @@ y pasarlos a la vista sent.
 */
 public function sent()
 {
-$mails = DB::select('select * from mails');
+$mails = DB::select('select * from mails where estado = 1');
 return view('mail/sent', ['mails' => $mails]);
 }
 

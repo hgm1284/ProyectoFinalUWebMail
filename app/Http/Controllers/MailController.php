@@ -53,7 +53,14 @@ return view('mail/write');
 
 public function show($id)
 {
+$email=Mail::findOrFail($id);
+return view('mail/see',compact('email'));
+}
 
+public function draft()
+{
+$mails = DB::select('select * from mails where estado = 2');
+return view('mail/draft', ['mails' => $mails]);
 }
 
 /*

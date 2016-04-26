@@ -78,6 +78,7 @@
   <td>{{$mail->destino}}</td>
   <td>{{$mail->asunto}}</td>
   <td>{{$mail->fecha}}</td>
+  <td><a class="btn btn-info" href="{{URL::route('mail.edit',$mail->id)}}" role="button">Edit</a></td>
   <td><a class="btn btn-info" href="{{URL::route('mail.show',$mail->id)}}" role="button">View</a></td>
 <td>
 

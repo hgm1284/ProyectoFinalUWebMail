@@ -18,7 +18,7 @@ y pasarlos a la vista home.
 */
 public function index()
 {
-$mails = DB::select('select * from mails');
+$mails = DB::select('select * from mails where estado = 0');
 return view('home', ['mails' => $mails]);
 }
 

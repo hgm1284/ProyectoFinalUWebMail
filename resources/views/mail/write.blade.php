@@ -49,7 +49,7 @@
     <div class="btn-group-vertical">
       <a href="{{ URL::to('home') }}" type="button" id="btn2"class="btn btn-default">Salida</a>
       <a href="{{ URL::to('mail/sent') }}" type="button" id="btn2"class="btn btn-default">Enviados</a>
-      <button type="button" class="btn btn-default" id="btn1">Borrador</button>
+      <a href="{{ URL::to('mail/draft') }}" type="button" id="btn2"class="btn btn-default"><b>Borrador</b></a>
       <a href="{{ URL::to('logout') }}" type="button" class="btn btn-default">Salir</a>
     </div>
   </div>
@@ -70,15 +70,15 @@
 <form action='/mail' method="POST">
 {!! csrf_field() !!}
 <div class="form-group">
-<label for="exampleInputEmail1">destino</label>
+<label for="exampleInputEmail1">Destino:</label>
 {!!Form::email('destino',null,['class'=>'form-control','placeholder'=>'Address'])!!}
 </div>
 <div class="form-group">
-<label for="example">asunto</label>
+<label for="example">Asunto:</label>
 {!!Form::text('asunto',null,['class'=>'form-control','placeholder'=>'Subject'])!!}
 </div>
 <div class="form-group">
-<label for="example">mensaje</label>
+<label for="example">Mensaje:</label>
 {!!Form::textarea ('mensaje',null,['class'=>'form-control','placeholder'=>'Write the message here'])!!}
 </div>
 <button type="submit" class="btn btn-danger">Enviar</button>

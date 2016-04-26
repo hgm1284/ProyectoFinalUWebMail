@@ -37,6 +37,8 @@ Route::get('mail/sent', [
 'as' => 'mail/sent'
 ]);
 
+
+
 // Route verification...
 Route::post('login', [
 'uses'=>'UserController@login',
@@ -53,6 +55,7 @@ Route::get('logout', [
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('mail/draft', 'MailController@draft');
 Route::resource('mail', 'MailController');
 Route::get('mail/verificar/{remember_token}','MailController@verificar');
 

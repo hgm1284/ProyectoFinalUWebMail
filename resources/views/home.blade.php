@@ -55,7 +55,7 @@
     <div class="btn-group-vertical">
       <a href="{{ URL::to('home') }}" type="button" id="btn2"class="btn btn-default"><b>Salida</b></a>
       <a href="{{ URL::to('mail/sent') }}" type="button" id="btn2"class="btn btn-default">Enviados</a>
-      <button type="button" class="btn btn-default" id="btn1">Borrador</button>
+      <a href="{{ URL::to('mail/draft') }}" type="button" id="btn2"class="btn btn-default"><b>Borrador</b></a>
       <a href="{{ URL::to('logout') }}" type="button" class="btn btn-default">Salir</a>
     </div>
   </div>
@@ -79,6 +79,7 @@
   <td>{{$mail->asunto}}</td>
   <td>{{$mail->fecha}}</td>
   <td><a class="btn btn-info" href="{{URL::route('mail.edit',$mail->id)}}" role="button">Edit</a></td>
+  <td><a class="btn btn-info" href="{{URL::route('mail.show',$mail->id)}}" role="button">View</a></td>
 <td>
 
 {!!  Form::open(['route'=>['mail.destroy' ,$mail->id],'method'=>'delete'])!!}
